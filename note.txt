@@ -3,9 +3,12 @@ git add.
 git commit -m "decription"
 git push
 
+ nodemon --inspect src/index.js
 
 chạy nodemon: npm start
 tắt nodemon: ctrl + c => y
 
 install nodemon:  npm i nodemon --save-dev
 install morgan: npm i morgan --save-dev
+
+c spell 
