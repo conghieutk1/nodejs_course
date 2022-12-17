@@ -4,17 +4,21 @@ const {
     getHomepage,
     getA,
     getHieudang,
-    postCreateUser,
     getCreatePage,
-    getEditUser,
+    postCreateUser,
+    getEditPage,
+    postEditUser,
+    DeleteUser,
 } = require('../controllers/homeController.js');
 
 router.get('/', getHomepage);
 router.get('/a', getA);
 router.get('/hieudang', getHieudang);
 router.get('/create', getCreatePage);
-router.get('/edit', getEditUser);
+router.get('/edit/:id', getEditPage);
 
 router.post('/create-user', postCreateUser);
+router.post('/edit-user', postEditUser);
+router.get('/delete/:id', DeleteUser);
 
 module.exports = router;
