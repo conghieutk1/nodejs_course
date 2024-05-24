@@ -28,5 +28,6 @@ app.use('/', WebRoutes);
 // });
 
 app.listen(port, hostname, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Node app listening on port ${port}`);
+    console.log(`Local: http://localhost:${port}`);
 });

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SSR with Axios and EJS</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            async function fetchPostContent(postId) {
+                try {
+                    const response = await axios.get(`/api/posts/${postId}`);
+                    const post = response.data;
+                    document.getElementById('post-content').innerText =
+                        post.body;
+                } catch (error) {
+                    console.error(
+                        'There has been a problem with your fetch operation:',
+                        error
+                    );
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Post Content</h1>
+        <div id="post-content">
+            <p>Select a post to see the content.</p>
+        </div>
+        <h1>Posts</h1>
+        <ul>
+            <% posts.forEach(post => { %>
+            <li>
+                <a href="#" onclick="fetchPostContent(<%= post.id %>)"
+                    ><%= post.title %></a
+                >
+            </li>
+            <% }) %>
+        </ul>
+    </body>
+</html>

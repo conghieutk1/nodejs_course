@@ -7,7 +7,7 @@ const {
 } = require('../services/CRUDService.js');
 
 const getA = (req, res) => {
-    res.send('A');
+    res.render('test_axios.ejs');
 };
 
 const getHieudang = (req, res) => {
